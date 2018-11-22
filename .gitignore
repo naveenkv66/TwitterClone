@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BusinessLayer/obj/Debug
+/BusinessLayer/bin/Debug
+/.vs
+/CommonEntities/obj/Debug
+/DataAccessLayer/obj/Debug
+/DataAccessLayer/bin/Debug
+/CommonEntities/bin/Debug
+/TwitterClone
+/BusinessLayer/obj/Release
+/DataAccessLayer/obj/Release
+/packages
