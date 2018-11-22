@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Twitter Clone</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+        @if (Session["UserName"] != null)
+        {
+            @Html.ActionLink("Welcome to Twitter Clone", "Tweet", "Twitter", new { area = "" }, new { @class = "navbar-brand" })
+        }
+        else
+        {
+            @Html.ActionLink("Welcome to Twitter Clone", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+        }
+
+        <ul class="nav navbar-nav navbar-right" style="display: inline; margin-left:55%;">
+            @if (Session["UserName"] != null)
+            {
+                @*<li style="display: inline">@Html.ActionLink("Profile", "Update", "Account") <span>| </span></li>*@
+                <li style="display: inline">@Html.ActionLink("Sign Out", "LogOff", "Account")</li>
+            }
+            else
+            {
+                <li style="display: inline">@Html.ActionLink("Sign Up", "Register", "Account")</li>
+            }
+        </ul>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Twitter Clone</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
